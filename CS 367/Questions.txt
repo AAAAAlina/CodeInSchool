@@ -1,0 +1,91 @@
+/*******************************************************************************
+File:             Questions.txt
+
+Author:           Qiannan Guo
+
+Completion Date:  4/17/2016
+
+Course:           CS 367, Spring 2016
+*******************************************************************************/
+Directions: answer the following six (6) questions. 
+
+1) Before running your program, what is the worst complexity of building tree for 
+ArrayList, Binary Search Tree, Binary Search Tree with a small positive
+rebalance factor(e.g 2) and RBTree?
+
+Answer:
+For ArrayList, the worst complexity of building tree is O(1).
+For Binary Search Tree, the worst complexity of building tree is O(N).
+For Binary Search Tree with a small rebalance factor, the worst complexity of building tree is O(NlogN).
+For RBTree, the worst complexity of building tree is O(logN).
+
+2) Before running your program, what is the worst complexity of contains search for 
+ArrayList, Binary Search Tree, Binary Search Tree with a small positive
+rebalance factor(e.g 2) and RBTree?
+
+Answer:
+For ArrayList, the worst complexity of contains search is O(N).
+For Binary Search Tree, the worst complexity of contains search is O(N).
+For Binary Search Tree with a small rebalance factor, the worst complexity of contains search is O(logN).
+For RBTree, the worst complexity of contains search is O(logN).
+
+3) Before running your program, what is the worst complexity of range search for 
+ArrayList, Binary Search Tree, Binary Search Tree with a small positive
+rebalance factor(e.g 2) and RBTree? Assume the range is small. Assume the result of
+range search contains K elements.
+
+Answer:
+For ArrayList, the worst complexity of range search is O(N).
+For Binary Search Tree, the worst complexity of range search is O(N).
+For Binary Search Tree with a small rebalance factor, the worst complexity of range search is O(NlogN).
+For RBTree, the worst complexity of range search is O(logN).
+
+For questions 4 - 6, you should use the Evaluator program as written.
+
+4) In this question you will run the program using the parameters 
+indicated below:
+
+random_1000.txt 10 2 3
+
+a)For random data, what are the rankings (from fastest to slowest) for the four 
+data structures based on the mean time of building a tree, contains search, and range
+search? 
+b)What about for the sorted data?
+
+Answer:
+a)
+Building a tree:ArrayList < RBTreeSet ~= BSTreeSet < BSTreeBSet
+Contains search:BSTreeBSet < BSTreeBSet ~= RBTreeSet < ArrayList
+Range search:BSTreeBSet < BSTreeSet ~= RBTreeSet < ArrayList
+b)
+Building a tree:RBTreeSet ~= ArrayList < BSTreeSet ~= BSTreeBSet
+Contains search:RBTreeSet ~= BSTreeBSet < ArrayList < BSTreeSet
+Range search: BSTreeBSet ~= RBTreeSet < ArrayList ~= BSTreeSet
+
+5) In this question you will run the program using the parameters 
+indicated below:
+
+random_10000.txt 10 2 3
+
+a)Does the ranking change for the larger data set on random data and sorted data? 
+b)Which data structure has the largest growth rate function? Explain your answers in terms
+of building tree, contains search and range search for random data and sorted data.
+
+Answer:
+a)No, the ranking does not change.
+b)For random data, ArrayList has the largest growth rate. According to my data, the growth ratio of building tree, contains search, and range search are: 10, 50, 64 for ArrayList; 6.5, 5.3, 3.9 for BSTreeSet; 5.6, 4.75, 4.8 for BSTreeBSet; 6.3, 3.4, 4.7 for RBTreeSet.
+For sorted data, BSTreeSet has the largest growth rate. According to my data, the growth ratio of building tree, contains search, and range search are: 3, 47, 55 for ArrayList; 114, 130, 110 for BSTreeSet; 28, 11, 9 for BSTreeBSet; 5.3, 2.3, 6.9 for RBTreeSet.
+
+
+6) In this question you will run the program using the parameters 
+indicated below:
+
+random_1000.txt 10 2 3
+random_1000.txt 10 5 3
+random_1000.txt 10 10 3
+
+Briefly explain how the rebalanceThreshold effects the time for building tree, contains search 
+and range search.
+
+Answer:
+Building tree: When the rebalanceThreshold is higher, we need less time to build the tree. However, we need more time to do contains search and range search since it is more balance.
